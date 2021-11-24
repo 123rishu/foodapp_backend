@@ -3,7 +3,7 @@ const express = require("express");
 const ReviewRouter = express.Router();
 const protectRoute = require("./authHelper");
 const ReviewModel = require("../models/reviewModel");
-const plansModel = require("../models/PlanModel");
+const plansModel = require("../models/plansModel");
 const factory = require("../helpers/factory");
 
 // createReview

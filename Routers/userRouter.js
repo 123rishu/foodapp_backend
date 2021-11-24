@@ -119,21 +119,21 @@ userRouter
 //     }
 // }
 
-// function authorizeUser(rolesArr) {
-//     return async function (req, res, next) {
-//         let uid = req.uid;
-//         let { role } = await userModel.findById(uid);
-//         let isAuthorized = rolesArr.includes(role);
-//         if (isAuthorized) {
-//             next();
-//         } else {
-//             res.status(403).json({
-//                 message: "user not authorized contact admin"
-//             })
-//         }
+function authorizeUser(rolesArr) {
+    return async function (req, res, next) {
+        let uid = req.uid;
+        let { role } = await userModel.findById(uid);
+        let isAuthorized = rolesArr.includes(role);
+        if (isAuthorized) {
+            next();
+        } else {
+            res.status(403).json({
+                message: "user not authorized contact admin"
+            })
+        }
 
-//     }
-// }
+    }
+}
 //----------------------------------------------------------------------------------------------//
 
 module.exports = userRouter;

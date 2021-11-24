@@ -2,15 +2,15 @@ const express = require("express");
 
 // router
 const bookingRouter = express.Router();
-const bookingModel = require("../model/bookingModel");
-const UserModel = require("../model/userModel");
-const { protectRoute } = require("./utilFns")
+const bookingModel = require("../models/bookingModel");
+const UserModel = require("../models/userModel");
+const protectRoute = require("./authHelper");
 const {
-    getElement, getElements,
+    getElementById, getElements,
     updateElement,
 } = require("../helpers/factory");
 const updatebooking = updateElement(bookingModel);
-const getbooking = getElement(bookingModel);
+const getbooking = getElementById(bookingModel);
 const getbookings = getElements(bookingModel);
 // createbooking
 const initiateBooking = async function (req, res) {
@@ -43,7 +43,7 @@ const deletebooking = async function (req, res) {
         let booking = await bookingModel.findByIdAndDelete(req.body.id);
         console.log("booking", booking);
         let userId = booking.user;
-        let user = await userModel.findById(userId);
+        let user = await UserModel.findById(userId);
         let idxOfbooking = user.bookings.indexOf(booking["_id"]);
         user.booking.splice(idxOfbooking, 1);
         await user.save();

@@ -14,7 +14,7 @@ const userRouter = require("./Routers/userRouter");
 const authRouter = require("./Routers/authRouter");
 const planRouter = require("./Routers/planRouter");
 const reviewRouter = require("./Routers/reviewRouter");
-const bookingRouter = require('./Router/bookingRouter');
+const bookingRouter = require('./Routers/bookingRouter');
 //  /api/user/:id
 app.use('/api/user', userRouter);
 app.use("/api/auth", authRouter);
