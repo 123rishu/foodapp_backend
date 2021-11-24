@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const emailValidator = require("email-validator")
 const { PASSWORD } = process.env;
 let dbLink
-    = `mongodb+srv://admin:${PASSWORD}@cluster0.3gwfq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+    =  `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose.connect(dbLink, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
