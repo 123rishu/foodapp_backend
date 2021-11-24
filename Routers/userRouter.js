@@ -122,7 +122,7 @@ userRouter
 function authorizeUser(rolesArr) {
     return async function (req, res, next) {
         let uid = req.uid;
-        let { role } = await userModel.findById(uid);
+        let { role } = await UserModel.findById(uid);
         let isAuthorized = rolesArr.includes(role);
         if (isAuthorized) {
             next();
