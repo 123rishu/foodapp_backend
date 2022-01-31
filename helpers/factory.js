@@ -30,7 +30,6 @@ module.exports.getElements = function (ElementModel) {
             } else {
                 requestPromise = ElementModel.find();
             }
-            
             // sort
 
             if (req.query.sort) {
