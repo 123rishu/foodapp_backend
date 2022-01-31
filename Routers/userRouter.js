@@ -13,8 +13,8 @@ const getUserById = factory.getElementById(UserModel);
 
 userRouter
     .route("/")
-    .get(protectRoute, authorizeUser(["admin"]), getUsers)
-    .post(protectRoute, authorizeUser(["admin"]), createUser)
+    .get(protectRoute, authorizeUser(["admin", "user"]), getUsers)
+    .post(protectRoute, authorizeUser(["admin", "user"]), createUser)
 
 userRouter
     .route("/:id")

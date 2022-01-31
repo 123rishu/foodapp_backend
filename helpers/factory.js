@@ -26,9 +26,9 @@ module.exports.getElements = function (ElementModel) {
             let requestPromise;
             // query
             if (req.query.myQuery) {
-                requestPromise = elementModel.find(req.query.myQuery);
+                requestPromise = ElementModel.find(req.query.myQuery);
             } else {
-                requestPromise = elementModel.find();
+                requestPromise = ElementModel.find();
             }
             // sort
 

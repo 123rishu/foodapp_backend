@@ -1,16 +1,17 @@
 const mongoose = require("mongoose");
 const emailValidator = require("email-validator")
 const { PASSWORD } = process.env;
+
 let dbLink
-    = `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+    = `mongodb+srv://dbUser:Coding12345@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose.connect(dbLink, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(function (db) {
+    useUnifiedTopology: true
+}).then(function () {
     // console.log(db);
-    console.log("connected to db")
+    console.log("connected to db3")
 }).catch(function (err) {
-    console.log("err", err);
+    console.log("yha hai dikat db3", err);
 })
 // syntax 
 const userSchema = new mongoose.Schema({
@@ -66,6 +67,5 @@ userSchema.pre("save", function () {
 })
 
 const userModel = mongoose.model("userModel", userSchema);
-
 
 module.exports = userModel

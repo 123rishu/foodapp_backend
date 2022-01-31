@@ -2,13 +2,13 @@ const mongoose = require("mongoose");
 const emailValidator = require("email-validator")
 const { PASSWORD } = process.env;
 let dbLink
-    =  `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+    =   `mongodb+srv://dbUser:Coding12345@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose.connect(dbLink, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
 }).then(function () {
     // console.log(db);
-    console.log("connected to db")
+    console.log("connected to db4")
 }).catch(function (err) {
     console.log("err", err);
 })

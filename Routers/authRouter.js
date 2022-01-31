@@ -2,7 +2,7 @@ const userModel = require("../models/userModel");
 const mongoose = require("mongoose");
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const {JWT_KEY} = process.env;
+const {JWT_KEY} = require("../secrets2");
 const authRouter = express.Router();
 let emailSender = require("../helpers/emailSender");
 authRouter
@@ -70,7 +70,7 @@ async function loginUser(req, res) {
                     //Cookie ke liye ek unique token bhi create karna padega
                     let payLoad = user["_id"];
                     //Token creation
-                    let token = jwt.sign({id: payLoad}, JWT_KEY);
+                    let token = jwt.sign({id: payLoad}, JWT_KEY+"");
                     res.cookie("jwt", token, {httpOnly: true});
     
                     return res.status(200).json({
