@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const emailValidator = require("email-validator")
-const { PASSWORD } = process.env;
+const { PASSWORD } = require("../secrets2");
 
 let dbLink
-    = `mongodb+srv://dbUser:Coding12345@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+    = `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose.connect(dbLink, {
     useNewUrlParser: true,
     useUnifiedTopology: true

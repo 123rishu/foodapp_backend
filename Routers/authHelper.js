@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const {JWT_KEY} = require("../secrets2");
 console.log(JWT_KEY + "YO");
 function protectRoute(req, res, next){
-    console.log(req.cookies);
+    // console.log(req.cookies);
     try{
         //Pehle check karenge ki jwt nam ki cookie hai bhi ya nahi
         if(req.cookies.jwt){
