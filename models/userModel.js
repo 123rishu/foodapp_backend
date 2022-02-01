@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
-const emailValidator = require("email-validator")
-const { PASSWORD } = require("../secrets2");
+const emailValidator = require("email-validator");
+require("dotenv").config();
+let PASSWORD = process.env.PASSWORD;
 
 let dbLink
     = `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;

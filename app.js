@@ -3,6 +3,10 @@ const userModel = require("./models/userModel");
 const planModel = require("./models/plansModel");
 const cookieParser = require("cookie-parser");
 
+// require("dotenv").config();
+// let password = process.env.PASSWORD;
+
+
 //server init
 const app = express();
 

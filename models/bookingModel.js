@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
-const { PASSWORD } = require("../secrets2");
+require("dotenv").config();
+let PASSWORD = process.env.PASSWORD;
 
 let dbLink
-= `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+    = `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose.connect(dbLink, {
     useNewUrlParser: true,
     useUnifiedTopology: true
