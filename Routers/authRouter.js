@@ -2,7 +2,8 @@ const userModel = require("../models/userModel");
 const mongoose = require("mongoose");
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const {JWT_KEY} = require("../secrets2");
+require("dotenv").config();
+let JWT_KEY = process.env.JWT_KEY;
 const authRouter = express.Router();
 let emailSender = require("../helpers/emailSender");
 authRouter
