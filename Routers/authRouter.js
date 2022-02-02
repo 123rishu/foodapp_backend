@@ -64,7 +64,7 @@ async function loginUser(req, res) {
         if (loginUserObject.email) {
             //ye hum db se object nikal ke layenge, posted object ke email nam ke according
             let user = await userModel.findOne({ "email": loginUserObject.email });
-            if (user) {
+            if (user) { 
                 if (user.password == loginUserObject.password) {
                     //After validation, we send cookie in response for further validation
                     //httpOnly ko true karne se edit nahi ho payegi cookie
