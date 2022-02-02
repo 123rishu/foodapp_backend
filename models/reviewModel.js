@@ -4,13 +4,13 @@ let PASSWORD = process.env.PASSWORD;
 
 let dbLink
     = `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-mongoose.connect(dbLink, {})
-.then(function (db) {
-    // console.log(db);
-    console.log("connected to db2")
-}).catch(function (err) {
+
+try {
+    await mongoose.connect(dbLink);
+} catch (error) {
     console.log("err", err);
-})
+}
+
 const reviewSchema = new mongoose.Schema({
     review: {
         type: String,
@@ -36,7 +36,7 @@ const reviewSchema = new mongoose.Schema({
         ref: "planModel",
         required: [true, "Review must belong to a plan "]
     }
-    
+
 })
 
 const ReviewModel = mongoose.model("reviewModel", reviewSchema);
