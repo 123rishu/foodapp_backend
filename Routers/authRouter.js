@@ -99,7 +99,7 @@ async function loginUser(req, res) {
     }
     catch (err) {
         res.status(500).json({
-            message: err.message,
+            message: err.message + "yha hai dikat",
         })
     }
 }
