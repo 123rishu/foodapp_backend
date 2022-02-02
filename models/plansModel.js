@@ -5,11 +5,14 @@ let PASSWORD = process.env.PASSWORD;
 
 let dbLink
     = `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-try {
-    await mongoose.connect(dbLink);
-} catch (error) {
-    console.log("err", err);
-}
+    connectToDb();
+    async function connectToDb(){
+        try {
+            await mongoose.connect(dbLink);
+        } catch (error) {
+            console.log("err", err);
+        }
+    }
 // syntax 
 const planSchema = new mongoose.Schema({
     name: {
