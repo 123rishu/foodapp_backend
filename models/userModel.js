@@ -3,12 +3,16 @@ const emailValidator = require("email-validator");
 require("dotenv").config();
 let PASSWORD = process.env.PASSWORD;
 
+
+// try {
+//     await mongoose.connect('mongodb://localhost:27017/test');
+// } catch (error) {
+//     handleError(error);
+// }
 let dbLink
-    = `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&ssl=true`;
-mongoose.connect(dbLink, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(function () {
+    = `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+mongoose.connect(dbLink, {})
+.then(function () {
     // console.log(db);
     console.log("connected to db3")
 }).catch(function (err) {
