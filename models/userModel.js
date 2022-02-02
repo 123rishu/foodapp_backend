@@ -4,7 +4,7 @@ require("dotenv").config();
 let PASSWORD = process.env.PASSWORD;
 
 let dbLink
-    = `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+    = `mongodb+srv://admin:${PASSWORD}@cluster0.yjooj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&ssl=true`;
 mongoose.connect(dbLink, {
     useNewUrlParser: true,
     useUnifiedTopology: true
