@@ -10,7 +10,7 @@ async function connectToDb(){
     try {
         await mongoose.connect(dbLink);
     } catch (error) {
-        console.log("err", err);
+        console.log("err", error);
     }
 }
 const bookingSchema = new mongoose.Schema({

@@ -10,7 +10,7 @@ let dbLink
         try {
             await mongoose.connect(dbLink);
         } catch (error) {
-            console.log("err", err);
+            console.log("err", error);
         }
     }
 // syntax 
